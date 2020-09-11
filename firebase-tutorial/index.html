@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>Firebase Test</title>
+  <style>
+    .visible-block {
+      display: block;
+    }
+    .hidden-block {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Firebase Test</h1>
+  <form>
+    <div class="visible-on-logout">
+        MAIL：<input type="email" id="user-mail"><br>
+        PASS：<input type="password" id="user-pass"><br>
+        <button type="button" id="login-button">ログイン</button>
+      </div>
+      <div class="visible-on-login">
+        <button type="button" id="logout-button">ログアウト</button>
+      </div>
+    </form>
+    <div class="visible-on-login">
+      <button id="my-button" type="button">setNewValue</button>
+      <input type="file" accept=".jpg,.jpeg,.png,.gif, image/jpeg,image/png,image/gif" id="upload-image">
+      <img id="upload-image-preview" style="width: 64px; height: 64px;"/>
+    </div>
+
+  <!-- Firebaseのセットアップコード（下記のSDKのバージョンは6.2.0） -->
+  <!-- The core Firebase JS SDK is always required and must be listed first
+    (中心となるFirebase SDKです。常に必要で、最初に記述する必要があります) -->
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#config-web-app
+      (使いたいFirebaseサービス用のSDKを加えます) -->
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-storage.js"></script>
+
+  <!-- apiKeyなどは、ご自身の環境のものに合わせてください -->
+  <script>
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBfT3T0pIWMN2zSsIP68f6Nw_MYTLPKhmU",
+  authDomain: "realtime-chat-57fbc.firebaseapp.com",
+  databaseURL: "https://realtime-chat-57fbc.firebaseio.com",
+  projectId: "realtime-chat-57fbc",
+  storageBucket: "realtime-chat-57fbc.appspot.com",
+  // messagingSenderId: "401391068251",
+  // appId: "1:401391068251:web:2414489d20e0bb87e70b7e",
+  // measurementId: "G-PWDYD6D3QK"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
